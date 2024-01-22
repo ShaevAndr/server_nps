@@ -5,8 +5,7 @@ import { HydratedDocument } from 'mongoose';
 export type ContactDocument = HydratedDocument<Contact>;
 
 @Schema()
-export
-    class Contact extends Document {
+export class Contact extends Document {
     @Prop({ required: true })
     public id: number;
 

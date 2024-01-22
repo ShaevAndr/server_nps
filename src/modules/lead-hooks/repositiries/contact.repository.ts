@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { Contact, ContactDocument } from '../models/Contact.model'
+import { Contact, ContactDocument } from '../models/contact.model'
 import { InjectModel } from '@nestjs/mongoose';
 import { Model, Types } from 'mongoose';
 import { Logger } from 'core/logger/logger.service';
