@@ -1,9 +1,11 @@
-version: "1"
+version: "3.8"
 
 services:
+
   server:
     depends_on:
       - mongodb
+      - nginx
     build:
       context: .
       dockerfile: ./docker/Dockerfile
@@ -33,6 +35,17 @@ services:
       - ../db/nps:/data/db
     networks:
       - local_network
+
+  nginx:
+    image: nginx:stable-alpine3.17
+    container_name: nginx
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf
+    ports:
+      - 80:80
+    networks:
+      - local_network
+
 networks:
   local_network:
     driver: bridge
