@@ -11,11 +11,6 @@ services:
       dockerfile: ./docker/Dockerfile
     environment:
       NODE_ENV: production
-      DB_HOST: mongo://localhost:27017
-      DB_PORT: 27017
-      DB_USER: "reon"
-      DB_PASSWORD: "reon"
-      DB_NAME: "nps"
     ports:
       - 3000:3000
     networks:
